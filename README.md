@@ -70,4 +70,4 @@
    - cd ../base_environment
    - terraform destroy -var-file="../variables.tfvars" -auto-approve
 
-  Please see my [blog article](https://markrosscloud.medium.com/) for more information.
+  Please see my [blog article](https://markrosscloud.medium.com/options-for-installing-applications-on-ec2-and-when-you-might-use-them-940188febda7) for more information.
