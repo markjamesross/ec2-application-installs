@@ -1,22 +1,22 @@
 # ec2-application-installs
-##Options for deploying applications onto EC2 instances
+## Options for deploying applications onto EC2 instances
 ![overview](images/overview.jpg)
 
-###Authenticate to AWS on the command line: -
+### Authenticate to AWS on the command line: -
  - e.g. type the following commands, substituting the correct values
  - export AWS_ACCESS_KEY_ID=<Enter your access key>
  - export AWS_SECRET_ACCESS_KEY=<Enter your secret access key>
  - export AWS_DEFAULT_REGION=<Enter your region>
 
 
-###Build the pre-requisite network, IAM role and instance profile and additional Terraform and PAcker files used by the next stage: -
+### Build the pre-requisite network, IAM role and instance profile and additional Terraform and PAcker files used by the next stage: -
 ![base_environment](images/base_environment.jpg)
  - cd base_environment
  - terraform init
  - terraform apply -var-file="../variables.tfvars" -auto-approve
 
-##AMI Baking
-###AMI Baking with Packer and then Test building an EC2 Instance from the new Packer AMI: -
+## AMI Baking
+### AMI Baking with Packer and then Test building an EC2 Instance from the new Packer AMI: -
 ![packer_image_build_and_demo](images/packer_image_build_and_demo.jpg)
   - cd ../packer_image_builder
   - packer init .
@@ -30,7 +30,7 @@
   - terraform destroy -var-file="../variables.tfvars" -auto-approve
   - Go into the AWS console and delete the Packer created AMI and associated snapshot
 
-###AMI Baking with EC2 Image Builder and then Test building an EC2 Instance from the new EC2 Image Builder AMI: -
+### AMI Baking with EC2 Image Builder and then Test building an EC2 Instance from the new EC2 Image Builder AMI: -
 ![ec2_image_builder_build_and_demo](images/ec2_image_builder_build_and_demo.jpg)
   - cd ../ec2_image_builder
   - terraform init
@@ -46,8 +46,8 @@
   - terraform destroy -var-file="../variables.tfvars" -auto-approve
   - Go into the AWS console and delete the EC2 Image Builder created AMI and associated snapshot
 
-##Userdata
-###Create an EC2 Image from a generic AMI and install software as part of EC2 userdata: -
+## Userdata
+### Create an EC2 Image from a generic AMI and install software as part of EC2 userdata: -
   ![userdata](images/userdata.jpg)
   - cd ../user_data
   - terraform init
@@ -56,8 +56,8 @@
   - Once you've finished with the demo delete the new EC2 to save cost
   - terraform destroy -var-file="../variables.tfvars" -auto-approve
 
-##Post Deployment
-###Create an EC2 Image from a generic AMI and install software via Systems Manager: -
+## Post Deployment
+### Create an EC2 Image from a generic AMI and install software via Systems Manager: -
   ![systems_manager](images/systems_manager.jpg)
   - cd ../systems_manager
   - terraform init
