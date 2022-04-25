@@ -9,7 +9,7 @@ variable deployment_tool {
 variable service_name {
   description = "Name of the service"
   type = string
-  default = "base_environment"
+  default = "packer_demo_ec2"
 }
 variable repository_name {
   description = "Name of the GitHub Repository."
