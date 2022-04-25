@@ -9,7 +9,7 @@
  - export AWS_DEFAULT_REGION=<Enter your region>
 
 
-### Build the pre-requisite network, IAM role and instance profile and additional Terraform and PAcker files used by the next stage: -
+### Build the pre-requisite network, IAM role and instance profile and additional Terraform and Packer files used by the next stage: -
 ![base_environment](images/base_environment.jpg)
  - cd base_environment
  - terraform init
